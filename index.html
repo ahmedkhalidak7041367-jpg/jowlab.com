@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jow Lab | Creative Graphics Design</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* ====== RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff7eb3, #65d6ce);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #262262;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+	  z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      color: #fff;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c, #65d6ce);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .services, .portfolio {
+      background: #fff;
+      border-radius: 20px;
+      margin: 2rem auto;
+      max-width: 1000px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .card {
+      display: inline-block;
+      width: 250px;
+      margin: 1rem;
+      background: #f7f7f7;
+      border-radius: 15px;
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+	.portfolio .card {
+  display: inline-block;
+  width: 250px;
+  margin: 1rem;
+  background: #f7f7f7;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.portfolio .card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      background: #f1f1f1;
+      border-radius: 8px;
+    }
+
+    .contact button {
+      background: #65d6ce;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact button:hover {
+      background: #ff7eb3;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #65d6ce;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ff7eb3;
+    }
+	footer .social-link a{
+	color: #65d6ce;
+	margin: 0 15px;
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: all 0.3s ease;
+	}
+	footer .social-link a i {
+	  margin-right: 6px;
+	  }
+	footer .social-link a:hover {
+	color: #ff7eb3;
+	transform: scale(1.1);
+	}
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <img src="image\jow-icon.png" alt="Jow Lab Logo"/>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <h1>Welcome to Jow Art Lab</h1>
+    <p>Creative & Colorful Graphic Design That Brings Your Ideas to Life</p>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Jow Art Lab, we transform imagination into stunning visuals. From branding to digital art, our goal is to make your business stand out with unique designs tailored just for you.</p>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="card">🎨 Logo Design</div>
+    <div class="card">📱 Social Media Graphics</div>
+    <div class="card">📰 Flyers & Posters</div>
+    <div class="card">💻 Website Design</div>
+	<div class="card">&#128278;Branding</div>
+  </section>
+
+  <!-- ===== PORTFOLIO SECTION ===== -->
+  <section id="portfolio" class="portfolio">
+    <h2>Our Portfolio</h2>
+    <p>Take a look at some of our best work below.</p>
+    <div class="card"><img src="image\design1.jpg" alt="Design 1" width="100%"></div>
+    <div class="card"><img src="image\design2.jpg" alt="Design 2" width="100%"></div>
+    <div class="card"><img src="image\design3.jpg" alt="Design 3" width="100%"></div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Connect with us:</p>
+	<div class="social-link">
+    <a href="https://www.facebook.com/share/14Mw7TPkaqx/"
+	target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a> |
+    <a href="https://www.instagram.com/jow_art_lab?igsh=MWpndzEweXRhNjMzYg=="
+	target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a> |
+    <a href="https://www.tiktok.com/@jow_art_lab?_t=ZM-90baMsBYenk&r=1"
+	target="_blank"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
+	</div>
+    <p>&copy; 2025 Jow Art Lab. All Rights Reserved.</p>
+  </footer>
+  <script>
+  // Select all the portfolio cards
+  const cards = document.querySelectorAll('.portfolio .card');
+
+  // Function to check if element is visible
+  function checkCards() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+
+      if (cardTop < triggerBottom) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+  }
+
+  // Run on scroll
+  window.addEventListener('scroll', checkCards);
+
+  // Run on load (in case some cards are already visible)
+  checkCards();
+</script>
+
+</body>
+</html>
