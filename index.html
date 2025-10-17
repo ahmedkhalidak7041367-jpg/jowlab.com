@@ -93,6 +93,34 @@
     .card:hover {
       transform: translateY(-10px);
     }
+	.service-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.service-buttons .card {
+  display: inline-block;
+  width: 250px;
+  margin: 0.5rem;
+  background: #f7f7f7;
+  border-radius: 15px;
+  padding: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-buttons .card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff7eb3, #65d6ce);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 	.portfolio .card {
   display: inline-block;
   width: 250px;
@@ -208,11 +236,12 @@
   <!-- ===== SERVICES SECTION ===== -->
   <section id="services" class="services">
     <h2>Our Services</h2>
-    <div class="card">🎨 Logo Design</div>
-    <div class="card">📱 Social Media Graphics</div>
-    <div class="card">📰 Flyers & Posters</div>
-    <div class="card">💻 Website Design</div>
-	<div class="card">&#128278;Branding</div>
+    <div class="service-buttons"><a href="logo.html" class="card">🎨 Logo Design</a>
+    <a href="social.html" class="card">📱 Social Media Graphics</a>
+    <a href="flyers.html" class="card">📰 Flyers & Posters</a>
+    <a href="webdesign.html" class="card">💻 Website Design</a>
+	<a href="branding.html" class="card">&#128278;Branding</a>
+	</div>
   </section>
 
   <!-- ===== PORTFOLIO SECTION ===== -->
@@ -227,7 +256,7 @@
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <form action="#" method="post">
+    <form action="https://formspree.io/f/mldpzozl" method="post">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
