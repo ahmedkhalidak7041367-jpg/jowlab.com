@@ -167,7 +167,7 @@
       color: #fff;
       padding: 10px 20px;
       border-radius: 8px;
-      cursor: pointer;
+      curser: pointer;
       transition: background 0.3s;
     }
 
@@ -261,15 +261,42 @@
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit"
+	  id="submit-btn">Send Message</button>
+ <div id="sending-message" style="display:none; margin-top:10px; color:#262262; font-weight:bold;">
+  <span class="spinner" style="
+    display:inline-block;
+    width:18px;
+    height:18px;
+    border:3px solid #262262;
+    border-top:3px solid transparent;
+    border-radius:50%;
+    animation: spin 1s linear infinite;
+    vertical-align:middle;
+  "></span> 
+  Sending your message...
+</div>
+
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+</style>
     </form>
 	</section>
 	
-  <script>
+ <script>
   const form = document.getElementById('contact-form');
+  const sendingMessage = document.getElementById('sending-message');
+  const submitBtn = document.getElementById('submit-btn');
 
   form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // Stop the default form submission
+    e.preventDefault(); // Stop normal form behavior
+
+    // Disable button and show animation
+    submitBtn.disabled = true;
+    sendingMessage.style.display = 'block';
 
     const formData = new FormData(form);
 
@@ -281,13 +308,19 @@
       });
 
       if (response.ok) {
-        // Redirect to thank you page after success
-        window.location.href = "thankyou.html";
+        // Wait a short moment for the animation, then redirect
+        setTimeout(() => {
+          window.location.href = "thankyou.html";
+        }, 1500); // 1.5 seconds delay
       } else {
-        alert("Oops! Something went wrong. Please try again.");
+        alert("❌ Oops! Something went wrong. Please try again.");
+        submitBtn.disabled = false;
+        sendingMessage.style.display = 'none';
       }
     } catch (error) {
-      alert("Error submitting form. Check your internet connection.");
+      alert("⚠ Error sending message. Check your internet connection.");
+      submitBtn.disabled = false;
+      sendingMessage.style.display = 'none';
     }
   });
 </script>
